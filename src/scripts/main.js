@@ -15,10 +15,10 @@ const contaOTempo = setInterval(function(){
 
     const diasAteOEvento = Math.floor(distanciaAteOevento / diaEmMs)
     const horasAteOEvento = Math.floor((distanciaAteOevento % diaEmMs) / horaEmMs)
-    const minutosAteOEvento = Math.floor(distanciaAteOevento % horaEmMs) / minutoEmMs
+    const minutosAteOEvento = Math.floor((distanciaAteOevento % horaEmMs) / minutoEmMs)
     const segundosAteOEvento = Math.floor((distanciaAteOevento % minutoEmMs) / 1000)
 
-    document.getElementById('contador').innerHTML = `${diasAteOEvento}d ${horasAteOEvento}h ${minutosAteOEvento}m ${segundosAteOEvento}s`
+    document.getElementById("contador").innerHTML = `${diasAteOEvento}d ${horasAteOEvento}h ${minutosAteOEvento}m ${segundosAteOEvento}s`
 
     if (distanciaAteOevento < 0) {
         clearInterval(contaOTempo)
